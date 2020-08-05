@@ -1,13 +1,27 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import Item
 
 # Create your views here.
 
-def order(request):
-    return render(request, 'order.html')
+def home(request):
+    shop = Item.objects.all()
+    return render(request, 'home.html', {'shop':shop})
 
-def order_list(request):
-    return render(request, 'order_list.html')
+def create(request):
+    if request.method == 'POST':
+        item = Item() 
+        item.name = request.POST['name']
+        item.price = request.POST['price']
 
-def order_update(request):
-    return render(request, 'order_update.html')
+        item.save()
+        return redirect('home') 
+
+def update(request, item_id):
+    # 강의를 따라 완성해봅시다.
+    pass
+
+def delete(request, item_id):
+    item = get_object_or_404(Item, pk=item_id)
+    item.delete()
+    return redirect('home')
 
