@@ -4,15 +4,15 @@ from .models import Item
 # Create your views here.
 
 def home(request):
-    shop = Item.objects.all()
-    return render(request, 'home.html', {'shop':shop})
+    # shop = Item.objects.all()
+    # return render(request, 'home.html', {'shop':shop})
+    return render (request, 'home.html',)
 
 def create(request):
     if request.method == 'POST':
         item = Item() 
         item.name = request.POST['name']
         item.price = request.POST['price']
-
         item.save()
         return redirect('home') 
 
