@@ -1,6 +1,21 @@
-{% extends 'third/base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 {% block content %}
 
+<h2>주문서 작성</h2>
+<div class="order">
+        <form action="{% url 'order' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" name="store" placeholder="가게이름">
+        <br>
+        <input type="text" name="menu" placeholder="메뉴">
+        <br>
+        <input type="text" name="side" placeholder="사이드">
+        <br>
+        <input type="text" name="address" placeholder="주소">
+        <br>
+        <input type="submit" class="button">
+        </form>
+    </div>
 
 {% endblock %}

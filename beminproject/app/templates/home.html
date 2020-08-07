@@ -61,8 +61,8 @@
     <div class="inner">
       <h3 class="masthead-brand">병의 민족</h3>
       <nav class="nav nav-masthead justify-content-center">
-        <a class="nav-link active" href="#">Home</a>
-        <a class="nav-link" href="#">가게</a>
+        <a class="nav-link active" href="{% url 'home'%}">Home</a>
+        <a class="nav-link" href="{% url 'store'%}">가게등록</a>
       </nav>
     </div>
   </header>
@@ -71,7 +71,7 @@
     <h1 class="cover-heading">병의 민족</h1>
     <p class="lead">공복에 치킨이 그리울 때</p>
     <p class="lead">
-      <a href="#" class="btn btn-lg btn-secondary">주문하러가기</a>
+      <a href="{% url 'order'%}" class="btn btn-lg btn-secondary">주문하러가기</a>
     </p>
   </main>
 

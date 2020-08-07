@@ -13,7 +13,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/third/list">배달의 민족</a>
+  <a class="navbar-brand" href="{% url 'home'%}">배달의 민족</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -22,20 +22,20 @@
 
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="order_list">리스트</a>
+        <a class="nav-link" href="{% url 'order'%}">주문</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="order">주문</a>
-     </li>
+        <a class="nav-link" href="{% url 'order_list'%}">주문 내역</a>
+      </li>
         <li class="nav-item">
-        <a class="nav-link" href="order_update">주문 수정</a>
-     </li>
+        <a class="nav-link" href="#">가게</a>
+      </li>
 
       </li>
     </ul>
   </div>
 </nav>
-    <!-- {% block content %}
-    {% endblock %} -->
+    {% block content %}
+    {% endblock %}
 </body>
 </html>

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<h2>가게등록</h2>
+<div class="store">
+        <form action="{% url 'store' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {% comment %} 이미지 불러오기 {% endcomment %}
+        
+        {% comment %} <div class="col-md-4">
+            <img src = "" width="150%" >
+        </div>  {% endcomment %}
+
+        <br>
+        <input type="text" name="name" placeholder="가게이름">
+        <br>
+        <input type="text" name="intro" placeholder="소개글">
+        <br>
+        <input type="submit" class="button">
+        </form>
+    </div>
+
+{% endblock %}
