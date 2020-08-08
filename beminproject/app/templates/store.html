@@ -6,20 +6,18 @@
 <div class="store">
         <form action="{% url 'store' %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-
-        {% comment %} 이미지 불러오기 {% endcomment %}
-        
-        {% comment %} <div class="col-md-4">
-            <img src = "" width="150%" >
-        </div>  {% endcomment %}
+        <div class="col-md-4">
+            <img src = "{% static 'images/logo.jpg' %}" width="150%" alt="images_logo.jpg">
+            <!---이미지 일단 그냥 bhc 상표 붙여넣었습니다. 제가 runserver가 자꾸 오류가 떠서 똑바로 나오는지 확인은 못했습니다ㅠㅠ -->
+        </div>  
 
         <br>
-        <input type="text" name="name" placeholder="가게이름">
+        <input type="text" name="name" placeholder="가게이름을 입력해주세요">
         <br>
-        <input type="text" name="intro" placeholder="소개글">
+        <input type="text" name="intro" placeholder="소개글을 입력해주세요">
         <br>
         <input type="submit" class="button">
         </form>
-    </div>
+</div>
 
 {% endblock %}
