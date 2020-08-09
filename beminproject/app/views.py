@@ -23,6 +23,7 @@ def order(request):
 # update가 안돼요!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 def update(request, item_id):
     item = get_object_or_404(Order, pk=item_id)
+    item_form = 
     if request.method == 'POST':
         item.store = request.POST['store']
         item.menu = request.POST['menu']
@@ -31,7 +32,7 @@ def update(request, item_id):
         item.save()
         return redirect('home')
     else :
-        return render (request, 'home.html', {'Items':item})
+        return render (request, 'update.html', {'Items':item})
 
 def delete(request, item_id):
     item = get_object_or_404(Order, pk=item_id)

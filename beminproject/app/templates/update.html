@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<h2>주문서 작성</h2>
+<div class="order">
+        <form action="{% url 'order' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" name="store" placeholder="가게이름" value='{{Items.store}}'>
+        <br>
+        <input type="text" name="menu" placeholder="메뉴" value='{{Items.menu}}'>
+        <br>
+        <input type="text" name="side" placeholder="사이드" value='{{Items.side}}'>
+        <br>
+        <input type="text" name="address" placeholder="주소" value='{{Items.address}}'>
+        <br>
+        <input type="submit" class="button">
+        </form>
+    </div>
+
+{% endblock %}
