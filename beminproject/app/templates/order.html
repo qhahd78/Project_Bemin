@@ -6,9 +6,9 @@
 <nav class="nav nav-masthead justify-content-center">
     <a class="nav-link" href="{% url 'home'%}">Home</a>
     <a class="nav-link active" href="{% url 'order'%}">주문하기</a>
-    <a class="nav-link" href="">주문목록</a>
+    <a class="nav-link" href="{% url 'order_list' %}">주문목록</a>
     <a class="nav-link" href="{% url 'store'%}">가게등록</a>
-    <a class="nav-link" href="">가게 둘러보기</a>
+    <a class="nav-link" href="{% url 'store_detail' %}">가게 둘러보기</a>
 </nav>
 {% endblock %}
 
