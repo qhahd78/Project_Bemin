@@ -1,13 +1,16 @@
+{% extends 'base.html' %}
+
 {% block navbar %}
 <nav class="nav nav-masthead justify-content-center">
     <a class="nav-link" href="{% url 'home'%}">Home</a>
+    <a class="nav-link" href="{% url 'order'%}">주문하기</a>
+    <a class="nav-link" href="">주문목록</a>
     <a class="nav-link" href="{% url 'store'%}">가게등록</a>
-    <a class="nav-link" href="{% url 'store'%}">가게 둘러보기</a>
+    <a class="nav-link" href="">가게 둘러보기</a>
 </nav>
 {% endblock %}
 
 {% block main %}
-
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
     <h1 class="display-4">병의민족</h1>
     <p class="lead">원하는 가게를 골라보세요!!</p>

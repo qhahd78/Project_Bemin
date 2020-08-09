@@ -5,16 +5,18 @@
 {% block navbar %}
 <nav class="nav nav-masthead justify-content-center">
     <a class="nav-link" href="{% url 'home'%}">Home</a>
+    <a class="nav-link" href="{% url 'order'%}">주문하기</a>
+    <a class="nav-link active" href="">주문목록</a>
     <a class="nav-link" href="{% url 'store'%}">가게등록</a>
-    <a class="nav-link" href="{% url 'store'%}">가게 둘러보기</a>
+    <a class="nav-link" href="">가게 둘러보기</a>
 </nav>
 {% endblock %}
 
 {% block main %}
 <h2>들어온 주문 목록</h2>
-    <div class="order_list">
-        {% for item in order %}
-        <div class="item">
+<div class="order_list">
+    {% for item in order %}
+    <div class="item">
         <span class="display">{{ item.store }}</span>
         <br>
         <span class="menu">{{ item.menu }}</span>
@@ -25,8 +27,8 @@
         <br>
         <span class="edit"><a href="{% url 'update' item.id %}">수정</a></span>
         <span class="edit"><a href="{% url 'delete' item.id %}">삭제</a></span>
-        </div>
-        {% endfor %}
     </div>
+    {% endfor %}
+</div>
 
 {% endblock %}
