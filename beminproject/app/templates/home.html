@@ -6,8 +6,9 @@
 <nav class="nav nav-masthead justify-content-center">
   <a class="nav-link active" href="{% url 'home'%}">Home</a>
   <a class="nav-link" href="{% url 'order'%}">주문하기</a>
-  <a class="nav-link" href="{% url 'order_list' %}">주문목록</a>
-  <a class="nav-link" href="{% url 'store'%}">가게등록 둘러보기</a>
+  <a class="nav-link" href="">주문목록</a>
+  <a class="nav-link" href="{% url 'store'%}">가게등록</a>
+  <a class="nav-link" href="">가게 둘러보기</a>
 </nav>
 {% endblock %}
 
@@ -16,7 +17,7 @@
   <h1 class="cover-heading">병의 민족</h1>
   <p class="lead">공복에 치킨이 그리울 때</p>
   <p class="lead">
-    <a href="{% url 'order'%}" class="btn btn-lg btn-secondary">주문하러가기</a>
+    <a href="{% url 'order'%}" class="btn btn-lg btn btn-warning">주문하러가기</a>
   </p>
 </main>
 {% endblock %}

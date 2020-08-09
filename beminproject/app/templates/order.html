@@ -6,8 +6,9 @@
 <nav class="nav nav-masthead justify-content-center">
     <a class="nav-link" href="{% url 'home'%}">Home</a>
     <a class="nav-link active" href="{% url 'order'%}">주문하기</a>
-    <a class="nav-link" href="{% url 'order_list' %}">주문목록</a>
-    <a class="nav-link" href="{% url 'store'%}">가게 둘러보기</a>
+    <a class="nav-link" href="">주문목록</a>
+    <a class="nav-link" href="{% url 'store'%}">가게등록</a>
+    <a class="nav-link" href="">가게 둘러보기</a>
 </nav>
 {% endblock %}
 
@@ -16,15 +17,16 @@
 <div class="order">
     <form action="{% url 'order' %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        <input type="text" name="store" placeholder="가게이름">
+        <input type="text" style="font-size:25px;" name="store" placeholder="가게이름" class="orderbox">
         <br>
-        <input type="text" name="menu" placeholder="메뉴">
+        <input type="text" style="font-size:25px;" name="menu" placeholder="메뉴" class="orderbox">
         <br>
-        <input type="text" name="side" placeholder="사이드">
+        <input type="text" style="font-size:25px;" name="side" placeholder="사이드" class="orderbox">
         <br>
-        <input type="text" name="address" placeholder="주소">
+        <input type="text" style="font-size:25px;" name="address" placeholder="주소" class="orderbox">
         <br>
-        <input type="submit" class="button">
+        <br>
+        <button type="button" style="font-size:25px;" class="btn btn btn-warning button submitbox">제출</button>
     </form>
 </div>
 {% endblock %}
