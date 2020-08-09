@@ -1,0 +1,44 @@
+{% block navbar %}
+<nav class="nav nav-masthead justify-content-center">
+    <a class="nav-link" href="{% url 'home'%}">Home</a>
+    <a class="nav-link" href="{% url 'store'%}">가게등록</a>
+    <a class="nav-link" href="{% url 'store'%}">가게 둘러보기</a>
+</nav>
+{% endblock %}
+
+{% block main %}
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">병의민족</h1>
+    <p class="lead">원하는 가게를 골라보세요!!</p>
+</div>
+
+{% for item in store_detail %}
+<div class="card mb-4 shadow-sm">
+    <div class="card-header">
+        <h4 class="my-0 font-weight-normal">{{ item.name }}</h4>
+    </div>
+    <div class="card-body">
+        <h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ mo</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+            <li>{{ item.intro }}</li>
+            <li>10 GB of storage</li>
+            <li>Priority email support</li>
+            <li>Help center access</li>
+        </ul>
+        {%endfor%}
+
+        {% for item in store_detail %}
+        <div class="item">
+            <span class="display">{{ item.name }}</span>
+            <br>
+            <span class="menu">{{ item.intro }}</span>
+            {%endfor%}
+
+
+            <a href="{% url 'order'%}">
+                <button type="button" class="btn btn-lg btn-block btn-primary">주문하러 가기</button>
+            </a>
+        </div>
+    </div>
+    {% endblock %}

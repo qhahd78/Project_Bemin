@@ -1,7 +1,17 @@
 {% extends 'base.html' %}
-{% load static %}
-{% block content %}
 
+{% block title %}병의 민족 - 주문서 작성{% endblock %}
+
+{% block navbar %}
+<nav class="nav nav-masthead justify-content-center">
+    <a class="nav-link" href="{% url 'home'%}">Home</a>
+    <a class="nav-link" href="{% url 'store'%}">가게등록</a>
+    <a class="nav-link" href="{% url 'store'%}">가게 둘러보기</a>
+</nav>
+{% endblock %}
+
+{% block main %}
+{% load static %}
 <h2>가게등록</h2>
 <div class="store">
         <form action="{% url 'store' %}" method="POST" enctype="multipart/form-data">
