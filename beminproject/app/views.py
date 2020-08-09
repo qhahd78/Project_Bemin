@@ -20,10 +20,8 @@ def order(request):
     else :
         return render (request, 'order.html', )
 
-# update가 안돼요!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 def update(request, item_id):
     item = get_object_or_404(Order, pk=item_id)
-    item_form = 
     if request.method == 'POST':
         item.store = request.POST['store']
         item.menu = request.POST['menu']
@@ -46,4 +44,9 @@ def order_list(request):
 def store(request):
     store = Store.objects.all()
     return render (request, 'store.html',{'store':store})
+
+
+def store_detail(request):
+    store_detail = Store.objects.all()
+    return render (request, 'store_detail.html',{'store_detail':store_detail})
 
