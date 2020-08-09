@@ -46,7 +46,3 @@ def store(request):
     return render (request, 'store.html',{'store':store})
 
 
-def store_detail(request):
-    store_detail = Store.objects.all()
-    return render (request, 'store_detail.html',{'store_detail':store_detail})
-

@@ -1,34 +1,46 @@
 {% extends 'base.html' %}
 
-{% block title %}병의 민족 - 가게등록{% endblock %}
-
 {% block navbar %}
 <nav class="nav nav-masthead justify-content-center">
     <a class="nav-link" href="{% url 'home'%}">Home</a>
     <a class="nav-link" href="{% url 'order'%}">주문하기</a>
     <a class="nav-link" href="{% url 'order_list' %}">주문목록</a>
-    <a class="nav-link active" href="{% url 'store'%}">가게등록</a>
-    <a class="nav-link" href="{% url 'store_detail' %}">가게 둘러보기</a>
+    <a class="nav-link" href="{% url 'store'%}">가게둘러보기</a>
 </nav>
 {% endblock %}
 
 {% block main %}
-
-<h2>가게등록</h2>
-<div class="store">
-    <form action="{% url 'store' %}" method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        <div class="col-md-4">
-            <input type="file" accept='.jpg, .png, .gif' name="image">
-        </div>
-
-        <br>
-        <input type="text" name="name" placeholder="가게이름을 입력해주세요">
-        <br>
-        <input type="text" name="intro" placeholder="소개글을 입력해주세요">
-        <br>
-        <input type="submit" class="button">
-    </form>
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">병의민족</h1>
+    <p class="lead">원하는 가게를 골라보세요!!</p>
 </div>
 
-{% endblock %}
+{% for item in store %}
+<div class="card mb-4 shadow-sm">
+    <div class="card-header">
+        <h4 class="my-0 font-weight-normal">{{ item.name }}</h4>
+    </div>
+    <div class="card-body">
+        <h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ mo</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+            <li>{{ item.intro }}</li>
+            <li>10 GB of storage</li>
+            <li>Priority email support</li>
+            <li>Help center access</li>
+        </ul>
+        {%endfor%}
+
+        {% for item in store%}
+        <div class="item">
+            <span class="display">{{ item.name }}</span>
+            <br>
+            <span class="menu">{{ item.intro }}</span>
+            {%endfor%}
+
+
+            <a href="{% url 'order'%}">
+                <button type="button" class="btn btn-lg btn-block btn-primary">주문하러 가기</button>
+            </a>
+        </div>
+    </div>
+    {% endblock %}
