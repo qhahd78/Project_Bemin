@@ -16,16 +16,16 @@
 <div class="order_list">
     {% for item in order %}
     <div class="item">
-        <span class="display">{{ item.store }}</span>
+        <span style="font-size:25px;" class="display">{{ item.store }}</span>
         <br>
-        <span class="menu">{{ item.menu }}</span>
+        <span style="font-size:25px;" class="menu">{{ item.menu }}</span>
         <br>
-        <span class="side">{{ item.side }}</span>
+        <span style="font-size:25px;" class="side">{{ item.side }}</span>
         <br>
-        <span class="address">{{ item.address }}</span>
+        <span style="font-size:25px;" class="address">{{ item.address }}</span>
         <br>
-        <span class="edit"><a href="{% url 'update' item.id %}">수정</a></span>
-        <span class="edit"><a href="{% url 'delete' item.id %}">삭제</a></span>
+        <span style="font-size:25px;" class="edit btn btn btn-warning button submitbox"><a href="{% url 'update' item.id %}">수정</a></span>
+        <span style="font-size:25px;" class="edit btn btn btn-danger button submitbox"><a href="{% url 'delete' item.id %}">삭제</a></span>
     </div>
     {% endfor %}
 </div>

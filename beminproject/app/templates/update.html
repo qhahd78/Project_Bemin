@@ -14,15 +14,15 @@
 <div class="order">
     <form action="{% url 'order' %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        <input type="text" name="store" placeholder="가게이름" value='{{Items.store}}'>
+        <input type="text" name="store" placeholder="가게이름" value='{{Items.store}}' style="font-size:25px;" class="orderbox">
         <br>
-        <input type="text" name="menu" placeholder="메뉴" value='{{Items.menu}}'>
+        <input type="text" name="menu" placeholder="메뉴" value='{{Items.menu}}' style="font-size:25px;" class="orderbox">
         <br>
-        <input type="text" name="side" placeholder="사이드" value='{{Items.side}}'>
+        <input type="text" name="side" placeholder="사이드" value='{{Items.side}}' style="font-size:25px;" class="orderbox">
         <br>
-        <input type="text" name="address" placeholder="주소" value='{{Items.address}}'>
+        <input type="text" name="address" placeholder="주소" value='{{Items.address}}' style="font-size:25px;" class="orderbox">
         <br>
-        <input type="submit" class="button">
+        <button type="submit" style="font-size:25px;" class="btn btn btn-warning button submitbox">제출</button>
     </form>
 </div>
 {% endblock %}
